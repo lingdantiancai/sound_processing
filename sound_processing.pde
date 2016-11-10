@@ -14,6 +14,11 @@ SoundFile sample;
 FFT fft;
 AudioDevice device;
 
+
+  int b = 360;
+  float s;
+  float[] a = new float[b];
+
 // Declare a scaling factor
 int scale = 5;
 
@@ -65,5 +70,17 @@ void draw() {
     rect( i*r_width, height, r_width, -sum[i]*height*scale );
     println(sum[0]*height*scale);
     point(650,sum[0]*height*scale);
+    //////////////////////
+    a[0] = sum[0]*height*scale;
+    for(int c =350;c>0;c--)
+    {       
+       a[c] = a[c-1];      
+    } 
+     stroke(255,0,123);
+     for(int c =0;c<350;c++)
+    {        
+       point(650+c,a[c]);
+    }
+    
   }
 }
