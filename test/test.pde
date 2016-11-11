@@ -24,7 +24,8 @@ void draw()
      stroke(255,0,123);
      for(int c =0;c<350;c++)
     {        
-       point(c,a[c]);
+      line(c,a[c],c+1,a[c+1]);
+      //point(c,a[c]);
     }
   
   
